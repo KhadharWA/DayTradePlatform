@@ -1,0 +1,22 @@
+.market-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.85);
+  font-family: 'Segoe UI', sans-serif;
+  flex: 1;
+}
+
+.market-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.market-card p {
+  margin: 0.25rem 0;
+  color: #374151;
+  font-size: 0.95rem;
+}

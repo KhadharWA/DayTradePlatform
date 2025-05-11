@@ -1,0 +1,419 @@
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+    background: #f4f4f4;
+    padding: 2rem;
+}
+
+.auth-box {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 10px;
+    max-width: 400px;
+    width: 100%;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7);
+}
+
+.auth-box h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #000000;
+    font-weight: 700;
+    font-size: 45px;
+}
+
+.google-btn {
+    width: 100%;
+    padding: 0.75rem;
+    background: white;
+    border: 1px solid #ccc;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border-radius: 100px;
+    cursor: pointer;
+    margin-bottom: 1.25rem;
+    color: #000000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.95);
+}
+
+.google-btn:hover {
+    width: 100%;
+    padding: 0.75rem;
+    background: #e2f73c;
+    border: 1px solid #e2f73c;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border-radius: 100px;
+    cursor: pointer;
+    margin-bottom: 1.25rem;
+    color: #000000;
+}
+
+.google-btn i {
+   font-weight: 700;
+   font-size: 20px;
+   color: #108f5e;
+}
+
+
+.divider {
+    text-align: center;
+    margin: 1rem 0;
+    color: #888;
+    position: relative;
+}
+
+.divider::before,
+.divider::after {
+    content: "";
+    height: 1px;
+    width: 40%;
+    background: #ccc;
+    position: absolute;
+    top: 50%;
+}
+
+.divider::before {
+    left: 0;
+}
+
+.divider::after {
+    right: 0;
+}
+
+.auth-box input[type="email"],
+.auth-box input[type="text"],
+.auth-box input[type="password"] {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    font-size: 0.95rem;
+}
+
+.checkbox-row{
+    align-items: flex-start;
+    font-size: 14px;
+    margin-bottom: 18px;
+    color: #000000; 
+}
+
+.checkbox-row input[type="checkbox"]{
+    gap: 0.5rem;
+    font-size: 14px;
+    color: #000000;
+    margin-right: 10px;
+    margin-bottom: -5px;
+}
+
+.checkbox-row a {
+    color: #0f00b2;
+    font-size: 14px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 0.75rem;
+    background: #0f00b2;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 0.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.9);
+}
+
+.submit-btn:hover {
+    width: 100%;
+    padding: 0.75rem;
+    background: #5e5eef;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 0.5rem;
+}
+
+.switch-auth {
+    margin-top: 1.25rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #000000;
+    font-weight: 700;
+}
+
+.switch-auth a {
+    color: #0f00b2;
+    font-weight: bold;
+    text-decoration: none;  
+}
+
+.switch-auth a:hover {
+    color: #8f101d;
+    font-weight: bold;
+    text-decoration: none;  
+}
+
+.disclaimer {
+    display: block;
+    margin-top: 1.5rem;
+    font-size: 0.75rem;
+    text-align: center;
+    color: #777;
+}
+
+/* pages/Login.css */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #ffffff;
+}
+
+.login-container h2 {
+    color: #000000;
+    font-weight: 700;
+    font-size: 40px;
+}
+  
+.login-form {
+    background: #fff;
+    padding: 2rem;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.9);
+}
+  
+.login-form h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+  
+.login-form input[type="email"],
+.login-form input[type="password"] {
+    width: 100%;
+    padding: 0.75rem;
+    margin-top: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+  
+.login-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+
+    font-size: 0.9rem;
+    color: #000000;
+}
+
+.forgot-password {
+    text-align: right;
+    margin-top: 0.3rem;
+    font-size: 0.9rem;
+}
+
+.forgot-password a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.forgot-password a:hover {
+    text-decoration: underline;
+}
+
+.checkbox-row label {
+    display: flex;
+    align-items: center;
+    gap: 1px;
+    font-size: 0.95rem;
+    color: #222;
+    cursor: pointer;
+    padding-top: 20px;
+    
+}
+
+/* Dölj standard checkbox */
+.checkbox-row input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: #fff;
+    border: 2px solid #ccc;
+    width: 18px;
+    height: 18px;
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s ease;
+    margin-top: -6px;
+}
+
+/* När checkbox är ikryssad */
+.checkbox-row input[type="checkbox"]:checked {
+    background-color: #0f00b2;
+    border-color: #0f00b2;
+}
+
+/* Visa en liten bock när ikryssad */
+.checkbox-row input[type="checkbox"]::after {
+    content: "";
+    position: absolute;
+    left: 5px;
+    top: 1px;
+    width: 4px;
+    height: 9px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    display: none;
+}
+
+.checkbox-row input[type="checkbox"]:checked::after {
+    display: block;
+}
+
+  
+.btn-primary {
+    width: 100%;
+    padding: 0.75rem;
+    margin-top: 1rem;
+    background: #0f00b2;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 100px;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(52, 52, 52, 0.9);
+}
+
+.btn-primary:hover {
+    width: 100%;
+    padding: 0.75rem;
+    margin-top: 1rem;
+    background: #5e5eef;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 100px;
+    cursor: pointer;
+}
+  
+.divider {
+    text-align: center;
+    margin: 1.5rem 0;
+    font-size: 0.9rem;
+    color: #888;
+    position: relative;
+}
+  
+.divider::before,
+.divider::after {
+    content: '';
+    height: 1px;
+    width: 40%;
+    background: #ccc;
+    position: absolute;
+    top: 50%;
+}
+  
+.divider::before {
+    left: 0;
+}
+.divider::after {
+    right: 0;
+}
+  
+.btn-social {
+    width: 100%;
+    padding: 0.75rem;
+    margin-top: 0.5rem;
+    font-weight: bold;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background: #fff;
+    cursor: pointer;
+}
+
+.btn-social:hover {
+    width: 100%;
+    padding: 0.75rem;
+    margin-top: 0.5rem;
+    font-weight: bold;
+    border: 1px solid #838383;
+    border-radius: 6px;
+    background: #ffd3d3;
+    cursor: pointer;
+}
+  
+.btn-social.google {
+    color: #db4437;
+}
+
+.btn-social.google i{
+    color: #db4437;
+    font-size: 20px;
+    margin-right: 10px;
+}
+.btn-social.apple {
+    color: #000;
+}
+
+.btn-social.apple i{
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.btn-social.facebook {
+    color: #4267B2;
+}
+
+.btn-social.facebook i{
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+  
+.signup-link {
+    text-align: center;
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    color: #000000;
+
+}
+
+.signup-link a{
+    text-align: center;
+    padding-left: 10px;
+    font-size: 0.9rem;
+    color: #1a058d;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.signup-link a:hover{
+    text-align: center;
+    padding-left: 10px;
+    font-size: 0.9rem;
+    color: #1a058d;
+    text-decoration: underline;
+    font-weight: 700;
+}

@@ -1,0 +1,45 @@
+.win-loss-columns {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+}
+.win-loss-columns ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.most-traded-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+  }
+  
+  .most-traded-table th,
+  .most-traded-table td {
+    padding: 0.6rem 1rem;
+    text-align: left;
+    font-size: 0.95rem;
+  }
+  
+  .most-traded-table th {
+    color: #ccc;
+    font-weight: 600;
+    border-bottom: 1px solid #333;
+  }
+  
+  .most-traded-table td {
+    border-bottom: 1px solid #222;
+  }
+  
+  .most-traded-table .green {
+    color: #16a34a;
+  }
+  
+  .most-traded-table .red {
+    color: #dc2626;
+  }
+  
+  .most-traded-container {
+    padding: 1rem;
+  }

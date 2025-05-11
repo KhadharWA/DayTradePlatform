@@ -1,0 +1,31 @@
+.site-footer {
+    background-color: #000021;
+    color: #fff;
+    padding: 2rem 1rem;
+    font-size: 0.9rem;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.footer-links {
+    margin-bottom: 1rem;
+}
+
+.footer-links a {
+    margin: 0 1rem;
+    color: #13c636;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #0f9f29;
+}
+
+.footer-copy {
+    opacity: 0.6;
+}

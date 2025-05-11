@@ -1,0 +1,251 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background-color: #0f0f0f;
+  color: white;
+}
+
+.bors-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.top-section {
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr;
+  gap: 1rem;
+  min-height: 300px; 
+}
+
+.bottom-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+}
+
+.history, .main-graph, .market,
+.most-traded, .winners-losers, .news {
+  background-color: #111827;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+/* animation */
+.animate-left {
+  animation: slideInLeft 0.5s ease-in-out forwards;
+}
+.animate-right {
+  animation: slideInRight 0.5s ease-in-out forwards;
+}
+.animate-fade {
+  animation: fadeIn 0.5s ease-in forwards;
+}
+
+@keyframes slideInLeft {
+  from { transform: translateX(-100%); opacity: 0; }
+  to   { transform: translateX(0); opacity: 1; }
+}
+@keyframes slideInRight {
+  from { transform: translateX(100%); opacity: 0; }
+  to   { transform: translateX(0); opacity: 1; }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.stock-detail {
+  padding: 1rem;
+  color: white;
+  background-color: #111827;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+}
+
+.quote-info {
+  margin-bottom: 1rem;
+}
+
+.stock-history-panel {
+  color: white;
+  background-color: #111827;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  width: 100%;
+}
+
+.stock-history-panel h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.stock-history-panel table {
+  border-collapse: collapse;
+  font-size: 1rem;
+  table-layout: fixed;
+}
+
+.stock-history-panel th,
+.stock-history-panel td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #333;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.stock-history-panel th {
+  font-weight: 600;
+  color: #ccc;
+}
+
+.stock-history-panel tr:hover {
+  background-color: #1f2937;
+}
+
+.overflow-scroll {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.period-buttons {
+  margin-bottom: 1rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.period-buttons button {
+  background: #1f2937;
+  color: white;
+  padding: 0.4rem 0.8rem;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.period-buttons button.active {
+  background-color: #3b82f6;
+  font-weight: bold;
+}
+
+.period-buttons button:hover {
+  color: #ffffff;
+  font-weight: bold;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin-top: 5px;
+}
+
+button {
+  background-color: #1f2937;
+  border-radius: 0.25rem;
+  color: #ffffff;
+  font-weight: bold;
+  border: 0px;
+  padding: 0.4rem 0.8rem;
+  font-size: 14px;
+  width: 120px;
+}
+
+button.active {
+  background-color: #3b82f6;
+  border-radius: 0.25rem;
+  color: #ffffff;
+}
+
+button:hover {
+  background-color: #9a9a9a;
+  border-radius: 0.25rem;
+  color: #000000;
+  font-weight: bold;
+  border: 0px;
+  padding: 0.4rem 0.8rem;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.period-buttons1 ul li button.active {
+  background-color: #3b82f6;
+  font-weight: bold;
+}
+
+.animate-slide {
+  animation: slideIn 0.6s ease;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.loading {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #ffffff;
+  margin-top: 2rem;
+}
+
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px; /* samma höjd som grafen */
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #ffffff; /* Blå färg */
+  border-top: 5px solid transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in forwards;
+  opacity: 0; /* Start transparent */
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1; /* Slutar helt synligt */
+  }
+}
+
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+}

@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "LkNc8BHMgYfXKKMzMxTWHw2c+cyrxW8Lk5lc1XAwkCE=",
+  "Source": "DaytraderPlatformBackend",
+  "BasePath": "_content/DaytraderPlatformBackend",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

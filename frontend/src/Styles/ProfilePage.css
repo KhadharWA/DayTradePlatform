@@ -1,0 +1,14 @@
+.profile-page {
+  background-color: #f5f5f5;
+  min-height: 100vh;
+  font-family: "Segoe UI", Roboto, sans-serif;
+  color: #1c1c1c;
+}
+
+.container {
+  
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 2rem 2rem;
+  gap: 2rem;
+}

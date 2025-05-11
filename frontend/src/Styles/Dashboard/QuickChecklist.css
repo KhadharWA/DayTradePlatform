@@ -1,0 +1,135 @@
+.checklist-card {
+    background: #ffffff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 9px rgba(0, 0, 0, 0.5);
+}
+
+.checklist-card .checklist-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    gap: 1rem;
+}
+
+.checklist-card .checklist-header .progress-svg {
+    transform: rotate(-90deg);
+    width: 50px;
+    height: 50px;
+    
+}
+
+.checklist-card .checklist-header .headerText  {
+    display: flex;
+    gap: 10px;
+    
+    align-items: center;
+}
+
+.checklist-card .checklist-header .headerText .title-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 1.2;
+
+}
+
+.checklist-card .checklist-header .headerText .title-group h3 {
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.checklist-card .checklist-header .headerText .title-group p {
+    font-size: 16px;
+    margin: 0;
+}
+
+
+.checklist-card .checklist-header .headerText .progress-text {
+    font-size: 16px;
+    color: #3b82f6;
+}
+
+.view-all {
+    background: transparent;
+    border: 1px solid #000000;
+    color: #000000;
+    font-size: 0.85rem;
+    cursor: pointer;
+    border-radius: 100px;
+    box-shadow: 0 5px 9px rgba(0, 0, 0, 0.5);
+}
+
+.view-all:hover {
+    background: #000000;
+    border: 1px solid #000000;
+    color: #ffffff;
+    font-size: 0.85rem;
+    cursor: pointer;
+    border-radius: 100px;
+}
+
+.checklist-tasks {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.checklist-tasks li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid #eee;
+    padding: 1rem 0;
+    gap: 1rem;
+}
+
+.task-icon {
+    font-size: 1.5rem;
+}
+
+.task-info {
+    flex: 1;
+}
+
+.task-title {
+    font-weight: bold;
+}
+
+.task-sub {
+    display: block;
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.bonus {
+    background: #3b82f6;
+    color: white;
+    font-size: 0.7rem;
+    padding: 0 0.4rem;
+    border-radius: 4px;
+    margin-left: 0.3rem;
+}
+
+.action-btn {
+    background: #f1f1f1;
+    border: none;
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    color: #000000;
+    box-shadow: 0 5px 9px rgba(0, 0, 0, 0.5);
+}
+
+.action-btn:hover {
+    background: #000000;
+    border: none;
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    color: #ffffff;
+    box-shadow: 0 5px 9px rgba(0, 0, 0, 0.5);
+}
