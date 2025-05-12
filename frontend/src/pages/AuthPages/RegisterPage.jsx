@@ -30,17 +30,21 @@ export default function Register() {
   
     if (!formData.terms) return alert("You must accept the terms.");
   
-    console.log("📤 Sending formData to backend:", formData);
+    console.log("Sending formData to backend:", formData);
   
     try {
       const response = await api.post("/Auth/register", formData);
-      console.log("✅ Registration success:", response.data);
-      alert("Registration successful!");
-    } catch (error) {
-      console.error("❌ Registration failed:", error);
+      console.log("Registration success:", response.data);
+      if (response.status === 200) {
+        alert("Registration successful!");
+        navigate('/login'); 
+      }
+    } 
+    catch (error) {
+      console.error("Registration failed:", error);
   
       if (error.response) {
-        console.log("📥 Response from backend:", error.response.data);
+        console.log("Response from backend:", error.response.data);
         alert(error.response.data?.error || "Registration failed (bad request)");
       } else {
         alert("No response from server");

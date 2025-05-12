@@ -33,16 +33,6 @@
   },
   {
     "ContainingType": "DaytraderPlatformBackend.Controllers.AuthController",
-    "Method": "Test",
-    "RelativePath": "api/Auth/test",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "DaytraderPlatformBackend.Controllers.AuthController",
     "Method": "GetToken",
     "RelativePath": "api/Auth/token",
     "HttpMethod": "POST",
@@ -58,6 +48,46 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "DaytraderPlatformBackend.Controllers.DepositController",
+    "Method": "GetUserDepositsAsync",
+    "RelativePath": "api/money/deposits",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Nullable\u00601[[System.Text.Json.JsonElement, System.Text.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "DaytraderPlatformBackend.Controllers.DepositController",
+    "Method": "GetUserWithdrawals",
+    "RelativePath": "api/money/withdrawal",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Nullable\u00601[[System.Text.Json.JsonElement, System.Text.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "DaytraderPlatformBackend.Controllers.ProfileController",
     "Method": "GetAddress",
     "RelativePath": "api/Profile/address",
@@ -71,16 +101,6 @@
     "ContainingType": "DaytraderPlatformBackend.Controllers.ProfileController",
     "Method": "GetProfile",
     "RelativePath": "api/Profile/details",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "DaytraderPlatformBackend.Controllers.ProfileController",
-    "Method": "Test",
-    "RelativePath": "api/Profile/test",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,

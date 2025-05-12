@@ -1,0 +1,118 @@
+#settings {
+  display: grid;
+  gap: 2rem;
+
+}
+
+#settings .Säkerhetbox {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.85);
+}
+
+#settings .Säkerhetbox h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: #222;
+}
+
+#settings .Säkerhetbox label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+#settings .Säkerhetbox input[type="text"],
+#settings .Säkerhetbox input[type="email"],
+#settings .Säkerhetbox input[type="number"],
+#settings .Säkerhetbox input[type="password"],
+#settings .Säkerhetbox select {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+#settings .Säkerhetbox .checkbox-group,
+#settings .Säkerhetbox .toggle-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+#settings .Säkerhetbox .checkbox-group label,
+#settings .Säkerhetbox .toggle-group label {
+    margin-bottom: 0;
+}
+
+#settings .Säkerhetbox .danger-zone {
+    background-color: #fff5f5;
+    border: 1px solid #f5c2c2;
+    padding: 1.5rem;
+    border-radius: 6px;
+    margin-top: 2rem;
+}
+
+#settings .Säkerhetbox .danger-zone p {
+    color: #c0392b;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+#settings .Säkerhetbox .danger-zone button {
+    background-color: #e74c3c;
+    color: white;
+    padding: 8px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.55);
+}
+
+#settings .Säkerhetbox .danger-zone button:hover {
+    background-color: #581008;
+}
+
+#settings .Säkerhetbox .form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+#settings .Säkerhetbox .form-actions button {
+    border-radius: 4px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+#settings .Säkerhetbox .form-actions button.save {
+    background-color: #2ecc71;
+    width: 150px;
+    color: #000000;
+    font-weight: bold;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.55);
+}
+
+#settings .Säkerhetbox .form-actions button.save:hover {
+  background-color: #084120;
+  color: #ffffff;
+}
+
+#settings .Säkerhetbox .form-actions button.cancel {
+    background-color: #d7d7d7;
+    padding: 10px 10px;
+    font-weight: bold;
+    color: #000000;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.55);
+}
+
+#settings .Säkerhetbox .form-actions button.cancel:hover {
+  background-color: #595959;
+  color: #ffffff;
+}

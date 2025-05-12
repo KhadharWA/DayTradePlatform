@@ -34,9 +34,9 @@ export default function Login() {
 
       const { token } = res.data;
       localStorage.setItem("token", token);
-      login(); // uppdaterar isLoggedIn
+      login(); 
 
-      // Ev. redirect till profil
+      
       window.location.href = "/profile";
     } catch (err) {
       console.error(err);

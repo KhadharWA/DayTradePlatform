@@ -36,18 +36,6 @@
         }
       }
     },
-    "/api/Auth/test": {
-      "get": {
-        "tags": [
-          "Auth"
-        ],
-        "responses": {
-          "200": {
-            "description": "Success"
-          }
-        }
-      }
-    },
     "/api/Auth/register": {
       "post": {
         "tags": [
@@ -110,14 +98,48 @@
         }
       }
     },
-    "/api/Profile/test": {
+    "/api/money/deposits": {
       "get": {
         "tags": [
-          "Profile"
+          "Deposit"
         ],
         "responses": {
           "200": {
-            "description": "Success"
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": { }
+              },
+              "application/json": {
+                "schema": { }
+              },
+              "text/json": {
+                "schema": { }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/money/withdrawal": {
+      "get": {
+        "tags": [
+          "Deposit"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": { }
+              },
+              "application/json": {
+                "schema": { }
+              },
+              "text/json": {
+                "schema": { }
+              }
+            }
           }
         }
       }
