@@ -33,7 +33,7 @@ export default function Register() {
     console.log("📤 Sending formData to backend:", formData);
   
     try {
-      const response = await api.post("/Account/register", formData);
+      const response = await api.post("/Auth/register", formData);
       console.log("✅ Registration success:", response.data);
       alert("Registration successful!");
     } catch (error) {

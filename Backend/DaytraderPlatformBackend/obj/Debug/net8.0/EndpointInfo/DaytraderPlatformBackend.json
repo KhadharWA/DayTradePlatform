@@ -208,37 +208,6 @@
         }
       }
     },
-    "/api/Profile/phone": {
-      "post": {
-        "tags": [
-          "Profile"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "string"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "type": "string"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "type": "string"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success"
-          }
-        }
-      }
-    },
     "/api/stocks/symbols": {
       "get": {
         "tags": [
@@ -461,14 +430,6 @@
             "nullable": true
           },
           "lastName": {
-            "type": "string",
-            "nullable": true
-          },
-          "email": {
-            "type": "string",
-            "nullable": true
-          },
-          "profileImageUrl": {
             "type": "string",
             "nullable": true
           },

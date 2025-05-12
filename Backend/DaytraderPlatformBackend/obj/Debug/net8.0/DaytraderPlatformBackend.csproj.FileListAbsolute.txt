@@ -213,3 +213,4 @@ C:\Utb-Projects\DaytraderPlatform\Backend\DaytraderPlatformBackend\bin\Debug\net
 C:\Utb-Projects\DaytraderPlatform\Backend\DaytraderPlatformBackend\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Utb-Projects\DaytraderPlatform\Backend\DaytraderPlatformBackend\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Utb-Projects\DaytraderPlatform\Backend\DaytraderPlatformBackend\bin\Debug\net8.0\Microsoft.AspNetCore.OpenApi.dll
+C:\Utb-Projects\DaytraderPlatform\Backend\DaytraderPlatformBackend\obj\Debug\net8.0\DaytraderPlatformBackend.sourcelink.json

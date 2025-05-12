@@ -417,3 +417,9 @@
     text-decoration: underline;
     font-weight: 700;
 }
+
+.error {
+    color: #770202;
+    font-weight: 700;
+    font-size: 14px;
+}

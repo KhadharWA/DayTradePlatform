@@ -18,12 +18,6 @@ public class ProfileController(DataContext context, UserManager<UserEntity> user
     private readonly DataContext _context = context;
     private readonly UserManager<UserEntity> _userManager = userManager;
 
-    [HttpGet]
-    [Route("test")]
-    public IActionResult Test()
-    {
-        return Ok("ProfileController fungerar!");
-    }
 
 
     
@@ -49,6 +43,7 @@ public class ProfileController(DataContext context, UserManager<UserEntity> user
                 user.FirstName,
                 user.LastName,
                 user.Email,
+                user.PhoneNumber,
                 user.Balance,
                 user.AutoTradeEnabled,
                 user.AutoTradeThreshold,
@@ -63,8 +58,13 @@ public class ProfileController(DataContext context, UserManager<UserEntity> user
 
     [HttpPost]
     [Route("updateDetails")]
-    public async Task<IActionResult> UpdateProfile(UpdateProfileDto dto)
+    public async Task<IActionResult> UpdateProfile([FromBody] UpdateProfileDto dto)
     {
+        if (!ModelState.IsValid)
+        {
+            return BadRequest(ModelState); // 🔍 This gives you detailed feedback if something is missing or invalid
+        }
+
         var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
         if (userId == null)
             return Unauthorized();
@@ -76,7 +76,6 @@ public class ProfileController(DataContext context, UserManager<UserEntity> user
         user.FirstName = dto.FirstName;
         user.LastName = dto.LastName;
         user.PhoneNumber = dto.PhoneNumber;
-        user.ProfileImageUrl = dto.ProfileImageUrl;
 
         var result = await _userManager.UpdateAsync(user);
         if (!result.Succeeded)
@@ -86,17 +85,34 @@ public class ProfileController(DataContext context, UserManager<UserEntity> user
     }
 
 
-    [HttpGet]
-    [Route("address")]
+    [HttpGet("address")]
     public async Task<IActionResult> GetAddress()
     {
-        var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-        var address = await _context.Addresses.FirstOrDefaultAsync(a => a.UserId == userId);
+        try
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (userId == null)
+                return Unauthorized(new { error = "Unauthorized: Missing user ID" }); 
 
-        if (address == null)
-            return NotFound();
+            var address = await _context.Addresses.FirstOrDefaultAsync(a => a.UserId == userId);
 
-        return Ok(address);
+            if (address == null)
+            {
+                return Ok(new
+                {
+                    AddressLine_1 = "",
+                    AddressLine_2 = "",
+                    PostalCode = "",
+                    City = ""
+                }); 
+            }
+
+            return Ok(address); 
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, new { error = "Internal Server Error", details = ex.Message }); 
+        }
     }
 
     [HttpPost]
@@ -130,17 +146,4 @@ public class ProfileController(DataContext context, UserManager<UserEntity> user
         return Ok(new { message = "Address saved" });
     }
 
-    [HttpPost]
-    [Route("phone")]
-    public async Task<IActionResult> UpdatePhone([FromBody] string phone)
-    {
-        var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-        var user = await _userManager.FindByIdAsync(userId!);
-        if (user == null) return NotFound();
-
-        user.PhoneNumber = phone;
-        await _userManager.UpdateAsync(user);
-
-        return Ok(new { message = "Phone updated" });
-    }
 }

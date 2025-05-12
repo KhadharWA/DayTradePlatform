@@ -11,9 +11,9 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<DataContext>(x => x.UseSqlServer(builder.Configuration.GetConnectionString("SqlServer")));
 
-builder.Services.AddIdentity<UserEntity, IdentityRole>()
-    .AddEntityFrameworkStores<DataContext>()
-    .AddDefaultTokenProviders();
+builder.Services.AddIdentityCore<UserEntity>(options => options.SignIn.RequireConfirmedAccount = true)
+	.AddEntityFrameworkStores<DataContext>()
+	.AddDefaultTokenProviders();
 
 
 

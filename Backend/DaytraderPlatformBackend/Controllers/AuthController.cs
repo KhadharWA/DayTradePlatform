@@ -37,7 +37,7 @@ public class AuthController(UserManager<UserEntity> userManager, IConfiguration 
             Subject = new ClaimsIdentity(new[]
             {
             new Claim(JwtRegisteredClaimNames.Sub, user.Id),
-            new Claim(ClaimTypes.NameIdentifier, user.Id), // ← behåll denna också för säkerhets skull
+            new Claim(ClaimTypes.NameIdentifier, user.Id), 
             new Claim(ClaimTypes.Name, user.UserName ?? user.Email!),
             new Claim(ClaimTypes.Email, user.Email!)
         }),
@@ -52,10 +52,6 @@ public class AuthController(UserManager<UserEntity> userManager, IConfiguration 
 
         return Ok(new { token = tokenString });
     }
-
-    [Authorize]
-    [HttpGet("test")]
-    public IActionResult Test() => Ok("Authorized route works!");
 
 
 
@@ -87,7 +83,7 @@ public class AuthController(UserManager<UserEntity> userManager, IConfiguration 
             if (!result.Succeeded)
                 return BadRequest(result.Errors);
 
-            // Optional: return JWT directly after register
+            
             var token = GenerateJwtToken(user);
             return Ok(new
             {

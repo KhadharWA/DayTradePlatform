@@ -79,22 +79,6 @@
   },
   {
     "ContainingType": "DaytraderPlatformBackend.Controllers.ProfileController",
-    "Method": "UpdatePhone",
-    "RelativePath": "api/Profile/phone",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "phone",
-        "Type": "System.String",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "DaytraderPlatformBackend.Controllers.ProfileController",
     "Method": "Test",
     "RelativePath": "api/Profile/test",
     "HttpMethod": "GET",
