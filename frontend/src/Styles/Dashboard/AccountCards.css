@@ -14,6 +14,11 @@
   gap: 0.5rem;
 }
 
+.accounts-card h3 i{
+  color: #111827;
+  margin-top: 5px;
+}
+
 .account-list {
   display: flex;
   flex-direction: column;

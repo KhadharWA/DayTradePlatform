@@ -1,0 +1,23 @@
+:root {
+  --color-background: #ffffff;
+  --color-surface: #cdcdcd;
+  --color-text: #000000;
+  --color-muted: #666666;
+  --color-border: #dddddd;
+  --color-accent: #2ecc71;
+  --color-danger: #e74c3c;
+  --color-button: #007bff;
+  --color-button-hover: #0056b3;
+}
+
+body.dark {
+  --color-background: #121212;
+  --color-surface: #1f1f1f;
+  --color-text: #f0f0f0;
+  --color-muted: #aaaaaa;
+  --color-border: #444444;
+  --color-accent: #27ae60;
+  --color-danger: #c0392b;
+  --color-button: #2980b9;
+  --color-button-hover: #1c5980;
+}

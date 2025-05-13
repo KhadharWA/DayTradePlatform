@@ -17,11 +17,11 @@ export default function WinnersLosers() {
   }, []);
 
   return (
-    <div>
-      <h3>🏅 Winning/Losing</h3>
+    <div className="win-loss-container">
+      <h3><i class="fa-solid fa-medal"></i> Winning/Losing</h3>
       <div className="win-loss-columns">
         <div>
-          <h4 style={{ color: "#4ade80" }}>Winner</h4>
+          <h4 style={{ color: "#035922" }}>Winner</h4>
           <ul>
             {data.winners.map((item, i) => (
               <li key={i}>{item.symbol} +{item.change_percent}%</li>
@@ -29,7 +29,7 @@ export default function WinnersLosers() {
           </ul>
         </div>
         <div>
-          <h4 style={{ color: "#f87171" }}>Loser</h4>
+          <h4 style={{ color: "#6c0606" }}>Loser</h4>
           <ul>
             {data.losers.map((item, i) => (
               <li key={i}>{item.symbol} {item.change_percent}%</li>

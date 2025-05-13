@@ -3,5 +3,15 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+
+  --color-background: #ffffff;
+  --color-surface: #f9f9f9;
+  --color-text: #111111;
+  --color-muted: #666666;
+  --color-border: #dddddd;
+  --color-accent: #2ecc71;
+  --color-danger: #e74c3c;
+  --color-button: #007bff;
+  --color-button-hover: #0056b3;
 }
 

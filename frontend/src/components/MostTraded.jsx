@@ -42,8 +42,8 @@ export default function MostTradedTable({ onSelect }) {
   }, [symbols]);
 
   return (
-    <div className="most-traded">
-      <h3>🔥 Most Traded</h3>
+    <div className="most-traded2">
+      <h3><i class="fa-solid fa-fire"></i> Most Traded</h3>
       <table className="most-traded-table">
         <thead>
           <tr>

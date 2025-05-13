@@ -80,12 +80,20 @@ const Settings = () => {
           <option value="sv">Svenska</option>
           <option value="en">Engelska</option>
         </select>
-
-        <label htmlFor="theme">Tema</label>
-        <select id="theme" value={theme} onChange={(e) => setTheme(e.target.value)}>
-          <option value="light">Ljust läge</option>
-          <option value="dark">Mörkt läge</option>
-        </select>
+        
+        <div class="theme-toggle-container">
+          <h4>Tema</h4>
+          <p>Välj mellan ljust och mörkt läge för din användarupplevelse</p>
+          
+          <div id="theme-switch" class="btn-switch">
+            <label>Light</label>
+            <label class="switch" for="switch-mode">
+              <input type="checkbox" id="switch-mode" />
+              <span class="slider round"></span>
+            </label>
+            <label>Dark</label>
+          </div>
+        </div>
 
         <div className="form-actions">
           <button className="cancel" onClick={handleCancel}>

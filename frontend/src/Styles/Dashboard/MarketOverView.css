@@ -7,13 +7,16 @@
   flex: 1;
 }
 
-.market-card h3 {
+.market-card h4 {
   font-size: 1.2rem;
   margin-bottom: 1rem;
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  font-weight: 700;
 }
+
+
 
 .market-card p {
   margin: 0.25rem 0;

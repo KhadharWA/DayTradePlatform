@@ -3,6 +3,11 @@
     padding: 4px 8px;
     border-radius: 4px;
 }
+
+.most-traded2 h3 i {
+    color: #c15f18;
+}
+
   
 .most-traded .most-traded-table .Stock-symbol:hover {
     background-color: #374151; /* or any subtle dark tone */
@@ -24,9 +29,9 @@
 }
   
 .most-traded .most-traded-table th {
-    color: #ccc;
+    color: #010101;
     font-weight: 600;
-    border-bottom: 1px solid #333;
+    border-bottom: 1px solid #333333;
 }
   
 .most-traded .most-traded-table td {
@@ -34,11 +39,11 @@
 }
   
 .most-traded .most-traded-table .green {
-    color: #16a34a;
+    color: #4d9a69;
 }
   
 .most-traded .most-traded-table .red {
-    color: #dc2626;
+    color: #813d3d;
 }
   
 .most-traded .most-traded-container {

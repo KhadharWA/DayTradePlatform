@@ -20,7 +20,7 @@ export default function News({ selectedSymbol }) {
 
   return (
     <div className="news-container">
-      <h3>📰 News</h3>
+      <h3><i class="fa-solid fa-newspaper"></i> News</h3>
       <div className="news-scroll">
         {articles.length === 0 && <p>Inga nyheter tillgängliga.</p>}
         {articles.map((item, i) => (
