@@ -52,7 +52,7 @@
               "RelativeDocumentMoniker": "DaytraderPlatformBackend\\Controllers\\AuthController.cs",
               "ToolTip": "C:\\Utb-Projects\\DaytraderPlatform\\Backend\\DaytraderPlatformBackend\\Controllers\\AuthController.cs",
               "RelativeToolTip": "DaytraderPlatformBackend\\Controllers\\AuthController.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-12T20:49:33.568Z",
               "EditorCaption": ""
@@ -67,8 +67,7 @@
               "RelativeToolTip": "DaytraderPlatformBackend\\MockData\\MockWithdrawals.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T20:41:21.712Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-12T20:41:21.712Z"
             },
             {
               "$type": "Document",
@@ -80,8 +79,7 @@
               "RelativeToolTip": "DaytraderPlatformBackend\\Services\\StockService.cs",
               "ViewState": "AgIAAC0AAAAAAAAAAAAAAEoAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T19:19:09.066Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-12T19:19:09.066Z"
             },
             {
               "$type": "Document",
@@ -93,8 +91,7 @@
               "RelativeToolTip": "DaytraderPlatformBackend\\Controllers\\StocksController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T18:57:21.26Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-12T18:57:21.26Z"
             },
             {
               "$type": "Document",
@@ -106,8 +103,7 @@
               "RelativeToolTip": "DaytraderPlatformBackend\\Controllers\\DepositController.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAwCQAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T18:43:37.471Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-12T18:43:37.471Z"
             },
             {
               "$type": "Document",
@@ -119,8 +115,7 @@
               "RelativeToolTip": "DaytraderPlatformBackend\\Dtos\\DepositeMockDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T18:42:56.341Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-12T18:42:56.341Z"
             },
             {
               "$type": "Document",
@@ -132,8 +127,7 @@
               "RelativeToolTip": "DaytraderPlatformBackend\\MockData\\MockDeposits.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T18:35:56.698Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-12T18:35:56.698Z"
             },
             {
               "$type": "Document",
@@ -145,8 +139,7 @@
               "RelativeToolTip": "DaytraderPlatformBackend\\MockData\\MockNews.cs",
               "ViewState": "AgIAABUAAAAAAAAAAAAAAAQAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T18:35:18.846Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-12T18:35:18.846Z"
             }
           ]
         }
