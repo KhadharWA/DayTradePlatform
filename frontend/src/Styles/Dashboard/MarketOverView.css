@@ -1,8 +1,8 @@
 .market-card {
-  background: #ffffff;
+  background-color: var(--color-db-bc);
   border-radius: 12px;
   padding: 1.5rem;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.85);
+  box-shadow: var(--shadow-db-sections);
   font-family: 'Segoe UI', sans-serif;
   flex: 1;
 }
@@ -14,12 +14,13 @@
   align-items: center;
   gap: 0.5rem;
   font-weight: 700;
+  color: var(--color-text);
 }
 
 
 
 .market-card p {
   margin: 0.25rem 0;
-  color: #374151;
+  color: var(--color-text);
   font-size: 0.95rem;
 }

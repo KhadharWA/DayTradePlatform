@@ -10,7 +10,7 @@
 
   
 .most-traded .most-traded-table .Stock-symbol:hover {
-    background-color: #374151; /* or any subtle dark tone */
+    background-color: var(--color-stock-tr); 
     cursor: pointer;
 }
 
@@ -29,7 +29,7 @@
 }
   
 .most-traded .most-traded-table th {
-    color: #010101;
+    color: var(--color-text);
     font-weight: 600;
     border-bottom: 1px solid #333333;
 }

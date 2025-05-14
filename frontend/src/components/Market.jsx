@@ -2,18 +2,20 @@ import { useEffect, useState } from "react";
 import api from "../api"; // eller var du har din API-funktion
 
 function getFlag(symbol) {
-  return "🇺🇸"; // Default USA
+  return "🇺🇸"; 
 }
 
 
 export default function Market({ onSelect, selectedSymbol }) {
   const [symbols, setSymbols] = useState([]);
+  const [activeSymbol, setActiveSymbol] = useState(null);
+
 
   useEffect(() => {
     const fetchSymbols = async () => {
       try {
-        const res = await api.get("/stocks/symbols"); // <-- API-endpoint för symboler
-        setSymbols(res.data); // anpassa beroende på hur datan ser ut
+        const res = await api.get("/stocks/symbols"); 
+        setSymbols(res.data); 
       } catch (error) {
         console.error("Kunde inte hämta symboler:", error);
       }
@@ -28,7 +30,13 @@ export default function Market({ onSelect, selectedSymbol }) {
       <ul>
         {symbols.map((symbol) => (
           <li key={symbol}>
-            <button onClick={() => onSelect(symbol)}>
+            <button
+              className={`btn-stock ${activeSymbol === symbol ? "active" : ""}`}
+              onClick={() => {
+                onSelect(symbol);
+                setActiveSymbol(symbol);
+              }}
+            >
               {getFlag(symbol)} {symbol}
             </button>
           </li>

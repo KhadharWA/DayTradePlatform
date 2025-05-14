@@ -1,8 +1,8 @@
 .sidebar {
-  background: #ffffff;
+  background-color: var(--color-db-bc);
   padding: 1rem;
   border-radius: 10px;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+  box-shadow: var(--shadow-sidebar-box);
   margin-bottom: 1rem;
 }
 
@@ -10,6 +10,7 @@
   font-weight: bold;
   font-size: 18px;
   margin-bottom: 1rem;
+  color: var(--color-text);
 }
 
 .sidebar-buttons {
@@ -30,7 +31,8 @@
   border-radius: 5px;
   width: auto;
   text-align: left;
-  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.55);
+  box-shadow: var(--shadow-sidebar-box);
+  transition: background 0.35s ease-in-out;
 }
 
 

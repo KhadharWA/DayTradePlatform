@@ -1,6 +1,6 @@
 .site-footer {
-    background-color: #000021;
-    color: #fff;
+    background-color: var(--color-header-bc);
+    color: #ffffff;
     padding: 2rem 1rem;
     font-size: 0.9rem;
 }
@@ -17,9 +17,11 @@
 
 .footer-links a {
     margin: 0 1rem;
-    color: #13c636;
+    font-size: 18px;
+    color: var(--color-footer-a);
     text-decoration: none;
-    transition: color 0.3s ease;
+    font-weight: 700;
+    transition: color 0.3s ease-in-out;
 }
 
 .footer-links a:hover {
@@ -28,4 +30,5 @@
 
 .footer-copy {
     opacity: 0.6;
+    color: var(--color-text);
 }

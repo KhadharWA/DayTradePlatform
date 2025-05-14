@@ -18,7 +18,7 @@ export default function Header() {
     <header className="main-header">
         <div className="container">
             <div className="header-left">
-            <div className="logo">📈 Borsa</div>
+            <div className="logo"><i class="fa-solid fa-chart-pie"></i> Borsa</div>
             <nav className={`nav-links ${menuOpen ? "open" : ""}`}>
             <a href={isLoggedIn ? "/profile" : "/"}>Home</a>
             <a href="/Stocks">Stocks</a>

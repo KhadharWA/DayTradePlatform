@@ -1,7 +1,7 @@
 import './Styles/core.css';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { useAuth } from './hooks/useAuth';
-import React, { useState } from 'react';
+import React, { useEffect,useState } from 'react';
 
 
 import Market from './components/Market';
@@ -19,6 +19,13 @@ import ProfilePage from './pages/ProfilePage.jsx';
 export default function App() {
   const [selectedStock, setSelectedStock] = useState(null);
   const { isLoggedIn } = useAuth();
+
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") {
+      document.body.classList.add("dark");
+    }
+  }, []);
 
   return (
     <div className="page-wrapper"> {/* Ny wrapper */}

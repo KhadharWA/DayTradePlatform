@@ -8,6 +8,26 @@
   --color-danger: #e74c3c;
   --color-button: #007bff;
   --color-button-hover: #0056b3;
+  --color-stock-box: #dadada;
+  --color-border-bottom: #333333;
+  --color-btn-stock: #181818;
+  --color-btn-text: #FFFFFF;
+  --color-btn-active: #b8b8b8;
+  --color-news-i: #454545;
+  --color-stock-tr: #9fb4d6;
+  --color-header-bc: #dcdcdc;
+  --color-border-bottom: #b7b7b7;
+  --color-footer-a: #1e4225;
+  --color-db-bottom: #e5e4e4;
+  --color-pf-bc: #f5f5f5;
+  --color-db-bc: #ffffff;
+  --color-db-hover: #cfcfcf;
+  --color-compare-btn:#ffffff;
+  --color-compare-border:#000000;
+
+  --shadow-db-sections: 0 5px 15px rgba(0, 0, 0, 0.85);
+  --shadow-account-box: 0 3px 8px rgba(0, 0, 0, 0.85);
+  --shadow-sidebar-box: 0 3px 6px rgba(0,0,0,0.2);
 }
 
 body.dark {
@@ -20,4 +40,28 @@ body.dark {
   --color-danger: #c0392b;
   --color-button: #2980b9;
   --color-button-hover: #1c5980;
+  --color-stock-box: #111827;
+  --color-border-bottom: #c3c2c2;
+  --color-btn-stock: #fcfcfc;
+  --color-btn-text: #000000;
+  --color-news-i: #f7f7f7;
+  --color-stock-tr: #374151;
+  --color-btn-active: #787878;
+  --color-btn-text: #090909;
+  --color-header-bc: #0e0f11;
+  --color-border-bottom: #1f2937;
+  --color-footer-a: #13c636;
+  --color-db-bottom: #777777;
+  --color-pf-bc: #494949;
+  --color-db-bc: #151515;
+  --color-db-hover: #393939;
+  --color-compare-btn:#000000;
+  --color-compare-border:#ffffff;
+
+
+
+  
+  --shadow-db-sections: 0 5px 15px rgba(255, 255, 255, 0.85);
+  --shadow-account-box: 0 3px 8px rgba(255, 255, 255, 0.85);
+  --shadow-sidebar-box: 0 3px 6px rgba(255, 255, 255, 0.6);
 }

@@ -72,6 +72,7 @@
     cursor: pointer;
     font-weight: bold;
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.55);
+    transition: background 0.35s ease-in-out;
 }
 
 #settings .Säkerhetbox .danger-zone button:hover {
@@ -97,6 +98,7 @@
     color: #000000;
     font-weight: bold;
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.55);
+    transition: background 0.35s ease-in-out;
 }
 
 #settings .Säkerhetbox .form-actions button.save:hover {
@@ -110,6 +112,7 @@
     font-weight: bold;
     color: #000000;
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.55);
+    transition: background 0.35s ease-in-out;
 }
 
 #settings .Säkerhetbox .form-actions button.cancel:hover {

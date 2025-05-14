@@ -1,11 +1,24 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "../../Styles/Settings.css";
 
 const Settings = () => {
   const [autoTrade, setAutoTrade] = useState(false);
   const [threshold, setThreshold] = useState("");
   const [language, setLanguage] = useState("sv");
-  const [theme, setTheme] = useState("light");
+  const [darkMode, setDarkMode] = useState(() => {
+    // Hämta tidigare val från localStorage
+    return localStorage.getItem("theme") === "dark";
+  });
+
+  useEffect(() => {
+    if (darkMode) {
+      document.body.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+    } else {
+      document.body.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+    }
+  }, [darkMode]);
 
   const handleSave = () => {
     // TODO: Save logic
@@ -24,6 +37,8 @@ const Settings = () => {
       alert("Konto raderat.");
     }
   };
+
+  
 
   return (
     <section id="settings">
@@ -81,15 +96,19 @@ const Settings = () => {
           <option value="en">Engelska</option>
         </select>
         
-        <div class="theme-toggle-container">
+        <div className="theme-toggle-container">
           <h4>Tema</h4>
-          <p>Välj mellan ljust och mörkt läge för din användarupplevelse</p>
-          
-          <div id="theme-switch" class="btn-switch">
+          <p>Välj mellan ljust och mörkt läge för hela plattformen</p>
+          <div id="theme-switch" className="btn-switch">
             <label>Light</label>
-            <label class="switch" for="switch-mode">
-              <input type="checkbox" id="switch-mode" />
-              <span class="slider round"></span>
+            <label className="switch" htmlFor="switch-mode">
+              <input
+                type="checkbox"
+                id="switch-mode"
+                checked={darkMode}
+                onChange={() => setDarkMode(!darkMode)}
+              />
+              <span className="slider round"></span>
             </label>
             <label>Dark</label>
           </div>

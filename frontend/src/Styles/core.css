@@ -30,7 +30,7 @@ body {
 
 .history, .main-graph, .market,
 .most-traded, .winners-losers, .news {
-  background-color: #dadada;
+  background-color: var(--color-stock-box);
   padding: 1rem;
   border-radius: 0.5rem;
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.55);
@@ -63,7 +63,7 @@ body {
 .stock-detail {
   padding: 1rem;
   color: var(--color-text);
-  background-color: #dadada;
+  background-color: var(--color-stock-box);
   border-radius: 0.5rem;
   font-size: 1rem;
 }
@@ -74,7 +74,7 @@ body {
 
 .stock-history-panel {
   color: var(--color-text);
-  background-color: #dadada;
+  background-color: var(--color-stock-box);
   border-radius: 0.5rem;
   font-size: 1rem;
   width: 100%;
@@ -95,7 +95,7 @@ body {
 .stock-history-panel th,
 .stock-history-panel td {
   padding: 0.75rem 1rem;
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid var(--color-border-bottom);
   text-align: left;
   white-space: nowrap;
   overflow: hidden;
@@ -109,7 +109,7 @@ body {
 }
 
 .stock-history-panel tr:hover {
-  background-color: var(--color-button);
+  background-color: var(--color-stock-tr);
 }
 
 .overflow-scroll {
@@ -124,29 +124,33 @@ body {
 }
 
 .most-traded .most-traded-table th {
-  color: #000000;
+  color: var(--color-text);
   font-weight: 600;
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid var(--color-border-bottom);
 }
 
 .period-buttons button {
-  background: var(--color-button);
-  color: var(--color-text);
+  background: var(--color-btn-stock);
+  color: var(--color-btn-text);
   padding: 0.4rem 0.8rem;
   border: none;
   border-radius: 0.25rem;
+  width: 120px;
   cursor: pointer;
   font-size: 14px;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.55);
 }
 
 .period-buttons button.active {
-  background-color: #3b82f6;
+  background-color: var(--color-btn-active);
   font-weight: bold;
+  color: var(--color-btn-text);
 }
 
 .period-buttons button:hover {
-  color: #ffffff;
+  background-color: var(--color-btn-active);
   font-weight: bold;
+  color: var(--color-btn-text);
 }
 
 ul {
@@ -158,25 +162,26 @@ li {
   margin-top: 5px;
 }
 
-button {
-  background-color: var(--color-button);
+.btn-stock {
+  background-color: var(--color-btn-stock);
   border-radius: 0.25rem;
-  color: #ffffff;
+  color: var(--color-btn-text);
   font-weight: bold;
   border: 0px;
   padding: 0.4rem 0.8rem;
   font-size: 14px;
-  width: 120px;
+  width: 160px;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.55);
 }
 
-button.active {
-  background-color: #3b82f6;
+.btn-stock.active {
+  background-color: var(--color-btn-active);
   border-radius: 0.25rem;
-  color: #ffffff;
+  color: var(--color-btn-text);
 }
 
-button:hover {
-  background-color: #9a9a9a;
+.btn-stock:hover {
+  background-color: var(--color-btn-active);
   border-radius: 0.25rem;
   color: #000000;
   font-weight: bold;

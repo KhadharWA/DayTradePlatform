@@ -1,22 +1,22 @@
 .overview-card {
-    background: #ffffff;
+    background: var(--color-db-bc);
     border-radius: 12px;
     padding: 1.5rem;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.85);
+    box-shadow: var(--shadow-db-sections);
     font-family: 'Segoe UI', sans-serif;
   }
   
   .overview-card h3 {
     font-size: 30px;
     margin-bottom: 1rem;
-    color: #111111;
+    color: var(--color-text);
     display: flex;
     align-items: center;
     gap: 0.5rem;
   }
 
   .overview-card h3  i{
-    color: #111111;
+    color: var(--color-text);
   }
   
   .overview-card ul {
@@ -25,15 +25,17 @@
     margin: 0;
     font-size: 14px;
     line-height: 1.6;
+    
   }
   
   .overview-card li {
     margin-bottom: 0.35rem;
-    color: #333;
+    color: var(--color-text);
+    opacity: 0.8;
   }
   
   .overview-card .positive {
-    color: #16a34a;
+    color: var(--color-footer-a);
   }
   
   .overview-card .negative {

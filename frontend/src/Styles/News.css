@@ -1,7 +1,7 @@
 @import './Light.css';
 
 .news-container {
-  background-color: #dadada;
+  background-color: var(--color-stock-box);
   color: var(--color-text);
   border-radius: 0.5rem;
   height: 100%;
@@ -10,7 +10,7 @@
 }
 
 .news-container h3 i {
-  color: #454545;
+  color: var(--color-news-i);
 }
 
   
@@ -31,7 +31,7 @@
 }
   
 .news-item:hover {
-  background-color: #1f2937;
+  background-color: var(--color-stock-tr);
 }
   
 .news-meta {

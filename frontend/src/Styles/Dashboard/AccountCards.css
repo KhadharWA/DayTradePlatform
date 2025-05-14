@@ -1,8 +1,8 @@
 .accounts-card {
-  background: #ffffff;
+  background: var(--color-db-bc);
   border-radius: 12px;
   padding: 1.5rem;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.85);
+  box-shadow: var(--shadow-db-sections);
   font-family: 'Segoe UI', sans-serif;
 }
 
@@ -12,10 +12,11 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  color: var(--color-text);
 }
 
 .accounts-card h3 i{
-  color: #111827;
+  color: var(--color-text);
   margin-top: 5px;
 }
 
@@ -30,20 +31,22 @@
   border-radius: 8px;
   padding: 1rem;
   transition: 0.3s ease;
+  box-shadow: var(--shadow-account-box);
 }
 
 .account-box:hover {
-  background-color: #cfcfcf;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+  background-color: var(--color-db-hover);
+  box-shadow: 0 3px 8px rgba(255, 255, 255, 0.55);
 }
 
 .account-box h4 {
   margin: 0 0 0.5rem 0;
   font-weight: 600;
-  color: #111827;
+  color: var(--color-text);
 }
 
 .account-box p {
   margin: 0;
-  color: #374151;
+  color: var(--color-text);
+  opacity: 0.7;
 }

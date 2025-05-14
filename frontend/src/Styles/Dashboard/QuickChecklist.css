@@ -1,8 +1,8 @@
 .checklist-card {
-    background: #ffffff;
+    background: var(--color-db-bc);
     padding: 1.5rem;
     border-radius: 10px;
-    box-shadow: 0 5px 9px rgba(0, 0, 0, 0.5);
+    box-shadow: var(--shadow-db-sections);
 }
 
 .checklist-card .checklist-header {
@@ -23,7 +23,7 @@
 .checklist-card .checklist-header .headerText  {
     display: flex;
     gap: 10px;
-    
+    color: var(--color-text);
     align-items: center;
 }
 
@@ -38,11 +38,13 @@
 .checklist-card .checklist-header .headerText .title-group h3 {
     font-weight: 700;
     font-size: 20px;
+    color: var(--color-text);
 }
 
 .checklist-card .checklist-header .headerText .title-group p {
     font-size: 16px;
     margin: 0;
+    color: var(--color-text);
 }
 
 
@@ -53,19 +55,22 @@
 
 .view-all {
     background: transparent;
-    border: 1px solid #000000;
-    color: #000000;
-    font-size: 0.85rem;
+    border: 1px solid var(--color-compare-border);
+    padding: 5px 12px;
+    font-size: 15px;
     cursor: pointer;
     border-radius: 100px;
     box-shadow: 0 5px 9px rgba(0, 0, 0, 0.5);
+    color: var(--color-text);
+    transition: background 0.2s ease-in-out;
 }
 
 .view-all:hover {
-    background: #000000;
-    border: 1px solid #000000;
-    color: #ffffff;
-    font-size: 0.85rem;
+    background: var(--color-compare-border);
+    border: 1px solid var(--color-compare-border);
+    color: var(--color-compare-btn);
+    font-size: 15px;
+    padding: 5px 12px;
     cursor: pointer;
     border-radius: 100px;
 }
@@ -74,6 +79,7 @@
     list-style: none;
     margin: 0;
     padding: 0;
+    color: var(--color-text);
 }
 
 .checklist-tasks li {
@@ -91,6 +97,7 @@
 
 .task-info {
     flex: 1;
+    
 }
 
 .task-title {
@@ -100,7 +107,8 @@
 .task-sub {
     display: block;
     font-size: 0.85rem;
-    color: #666;
+    color: var(--color-text);
+    opacity: 0.7;
 }
 
 .bonus {
@@ -113,23 +121,25 @@
 }
 
 .action-btn {
-    background: #f1f1f1;
-    border: none;
+    background: var(--color-compare-btn);
+    border: var(--color-compare-border);
     padding: 0.4rem 0.8rem;
     border-radius: 6px;
     font-size: 0.8rem;
+    font-weight: 700;
     cursor: pointer;
-    color: #000000;
-    box-shadow: 0 5px 9px rgba(0, 0, 0, 0.5);
+    color: var(--color-text);
+    box-shadow: var(--shadow-account-box);
+    transition: background 0.2s ease-in-out;
 }
 
 .action-btn:hover {
-    background: #000000;
-    border: none;
+    background: var(--color-compare-border);
+    border: var(--color-compare-btn);
     padding: 0.4rem 0.8rem;
     border-radius: 6px;
     font-size: 0.8rem;
     cursor: pointer;
-    color: #ffffff;
-    box-shadow: 0 5px 9px rgba(0, 0, 0, 0.5);
+    color: var(--color-db-bc);
+    box-shadow: var(--shadow-account-box);
 }

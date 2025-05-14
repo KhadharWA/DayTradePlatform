@@ -1,8 +1,8 @@
 .winners-losers-card {
-  background: #ffffff;
+  background: var(--color-db-bc);
   padding: 1rem 1.5rem;
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.86);
+  box-shadow: var(--shadow-db-sections);
   font-family: sans-serif;
 }
 
@@ -15,6 +15,7 @@
 .wl-header h3 {
   font-weight: 600;
   font-size: 16px;
+  color: var(--color-text);
 }
 
 .wl-tabs {
@@ -29,27 +30,27 @@
   font-size: 14px;
   cursor: pointer;
   padding-bottom: 3px;
-  color: #000000;
+  color: var(--color-text);
   font-weight: 500;
 }
 
 .wl-tabs .active {
-  color: black;
+  color: var(--color-text);
   font-weight: bold;
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid var(--color-compare-border);
 }
 
 .wl-description {
   margin-top: 0.5rem;
   font-size: 13px;
-  color: #000000;
+  color: var(--color-text)
 }
 
 .wl-description a {
   color: #1a44e1;
   text-decoration: none;
   margin-left: 0.4rem;
-  font-weight: 500;
+  font-weight: 700;
 }
 
 .wl-description a:hover {
