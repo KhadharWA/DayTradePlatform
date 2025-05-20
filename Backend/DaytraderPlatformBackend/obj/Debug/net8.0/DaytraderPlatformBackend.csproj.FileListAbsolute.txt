@@ -57,12 +57,6 @@ C:\Utb-Projects\DaytraderPlatform\Backend\DaytraderPlatformBackend\obj\Debug\net
 C:\Utb-Projects\DaytraderPlatform\Backend\DaytraderPlatformBackend\obj\Debug\net8.0\staticwebassets.build.json
 C:\Utb-Projects\DaytraderPlatform\Backend\DaytraderPlatformBackend\obj\Debug\net8.0\staticwebassets.development.json
 C:\Utb-Projects\DaytraderPlatform\Backend\DaytraderPlatformBackend\obj\Debug\net8.0\staticwebassets.build.endpoints.json
-C:\Utb-Projects\DaytraderPlatform\Backend\DaytraderPlatformBackend\obj\Debug\net8.0\staticwebassets\msbuild.DaytraderPlatformBackend.Microsoft.AspNetCore.StaticWebAssets.props
-C:\Utb-Projects\DaytraderPlatform\Backend\DaytraderPlatformBackend\obj\Debug\net8.0\staticwebassets\msbuild.DaytraderPlatformBackend.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
-C:\Utb-Projects\DaytraderPlatform\Backend\DaytraderPlatformBackend\obj\Debug\net8.0\staticwebassets\msbuild.build.DaytraderPlatformBackend.props
-C:\Utb-Projects\DaytraderPlatform\Backend\DaytraderPlatformBackend\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.DaytraderPlatformBackend.props
-C:\Utb-Projects\DaytraderPlatform\Backend\DaytraderPlatformBackend\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.DaytraderPlatformBackend.props
-C:\Utb-Projects\DaytraderPlatform\Backend\DaytraderPlatformBackend\obj\Debug\net8.0\staticwebassets.pack.json
 C:\Utb-Projects\DaytraderPlatform\Backend\DaytraderPlatformBackend\obj\Debug\net8.0\Daytrade.20931C35.Up2Date
 C:\Utb-Projects\DaytraderPlatform\Backend\DaytraderPlatformBackend\obj\Debug\net8.0\DaytraderPlatformBackend.dll
 C:\Utb-Projects\DaytraderPlatform\Backend\DaytraderPlatformBackend\obj\Debug\net8.0\refint\DaytraderPlatformBackend.dll
@@ -211,6 +205,13 @@ C:\Utb-Projects\DaytraderPlatform\Backend\DaytraderPlatformBackend\bin\Debug\net
 C:\Utb-Projects\DaytraderPlatform\Backend\DaytraderPlatformBackend\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
 C:\Utb-Projects\DaytraderPlatform\Backend\DaytraderPlatformBackend\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
 C:\Utb-Projects\DaytraderPlatform\Backend\DaytraderPlatformBackend\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
-C:\Utb-Projects\DaytraderPlatform\Backend\DaytraderPlatformBackend\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Utb-Projects\DaytraderPlatform\Backend\DaytraderPlatformBackend\bin\Debug\net8.0\Microsoft.AspNetCore.OpenApi.dll
 C:\Utb-Projects\DaytraderPlatform\Backend\DaytraderPlatformBackend\obj\Debug\net8.0\DaytraderPlatformBackend.sourcelink.json
+C:\Utb-Projects\DaytraderPlatform\Backend\DaytraderPlatformBackend\obj\Debug\net8.0\staticwebassets.build.json.cache
+C:\Utb-Projects\DaytraderPlatform\Backend\DaytraderPlatformBackend\bin\Debug\net8.0\DaytraderPlatformBackend.staticwebassets.runtime.json
+C:\Utb-Projects\DaytraderPlatform\Backend\DaytraderPlatformBackend\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Utb-Projects\DaytraderPlatform\Backend\DaytraderPlatformBackend\bin\Debug\net8.0\Microsoft.Extensions.Diagnostics.Abstractions.dll
+C:\Utb-Projects\DaytraderPlatform\Backend\DaytraderPlatformBackend\bin\Debug\net8.0\Microsoft.Extensions.Hosting.Abstractions.dll
+C:\Utb-Projects\DaytraderPlatform\Backend\DaytraderPlatformBackend\bin\Debug\net8.0\Microsoft.Extensions.ObjectPool.dll
+C:\Utb-Projects\DaytraderPlatform\Backend\DaytraderPlatformBackend\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Utb-Projects\DaytraderPlatform\Backend\DaytraderPlatformBackend\bin\Debug\net8.0\System.Net.WebSockets.WebSocketProtocol.dll

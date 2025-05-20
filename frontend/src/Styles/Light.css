@@ -24,7 +24,18 @@
   --color-db-hover: #cfcfcf;
   --color-compare-btn:#ffffff;
   --color-compare-border:#000000;
+  --color-theme-h5: #1f6feb;
+  --color-span: #B4B7C9;
+  --color-label: #0a0a0a;
+  --color-bk-input: #FFFFFF;
+  --color-bk-disabled: #8989894f;
+  --color-disabled: #000000;
+  --color-dangerzone: #fff5f5;
+  --color-dangerzone-bd: #f5c2c2;
 
+
+
+  --border-input: rgba(0, 0, 0, 0.31);
   --shadow-db-sections: 0 5px 15px rgba(0, 0, 0, 0.85);
   --shadow-account-box: 0 3px 8px rgba(0, 0, 0, 0.85);
   --shadow-sidebar-box: 0 3px 6px rgba(0,0,0,0.2);
@@ -57,10 +68,17 @@ body.dark {
   --color-db-hover: #393939;
   --color-compare-btn:#000000;
   --color-compare-border:#ffffff;
+  --color-theme-h5: #4da6ff;
+  --color-span: #cccccc;
+  --color-label: #f0f0f0;
+  --color-bk-input: #797979;
+  --color-bk-disabled: #2b2b2b;
+  --color-disabled: #888888;
+  --color-dangerzone: #2a0e0e;
+  --color-dangerzone-bd: #a44;
 
 
-
-  
+  --border-input: rgba(255, 255, 255, 0.2);
   --shadow-db-sections: 0 5px 15px rgba(255, 255, 255, 0.85);
   --shadow-account-box: 0 3px 8px rgba(255, 255, 255, 0.85);
   --shadow-sidebar-box: 0 3px 6px rgba(255, 255, 255, 0.6);

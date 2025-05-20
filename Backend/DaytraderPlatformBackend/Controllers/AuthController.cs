@@ -1,5 +1,6 @@
 ﻿using DaytraderPlatformBackend.Entities;
 using DaytraderPlatformBackend.Models;
+using DaytraderPlatformBackend.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -13,10 +14,11 @@ namespace DaytraderPlatformBackend.Controllers;
 
 [ApiController]
 [Route("api/Auth")]
-public class AuthController(UserManager<UserEntity> userManager, IConfiguration config) : ControllerBase
+public class AuthController(UserManager<UserEntity> userManager, IConfiguration config, INotificationService notificationService) : ControllerBase
 {
     private readonly UserManager<UserEntity> _userManager = userManager;
     private readonly IConfiguration _config = config;
+    private readonly INotificationService _notificationService = notificationService;
 
     [HttpPost]
     [Route("token")]
@@ -107,6 +109,7 @@ public class AuthController(UserManager<UserEntity> userManager, IConfiguration 
                 return Unauthorized("Invalid credentials");
 
             var token = GenerateJwtToken(user);
+            await _notificationService.CreateAsync(user.Id, $"Välkommen tillbaka, {user.FirstName}!");
             return Ok(new { token });
         }
         catch (Exception ex)

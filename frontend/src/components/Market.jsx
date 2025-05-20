@@ -26,7 +26,7 @@ export default function Market({ onSelect, selectedSymbol }) {
 
   return (
     <div>
-      <h3><i class="fa-solid fa-chart-simple"></i> Marknad</h3>
+      <h3><i className="fa-solid fa-chart-simple"></i> Marknad</h3>
       <ul>
         {symbols.map((symbol) => (
           <li key={symbol}>

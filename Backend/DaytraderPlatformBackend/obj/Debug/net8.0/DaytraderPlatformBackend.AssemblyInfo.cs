@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DaytraderPlatformBackend")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6226367624915ffe49397d70cc150e73a5baaf59")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3c71bd6ac2d27797230afbc924524b53d5d3079c")]
 [assembly: System.Reflection.AssemblyProductAttribute("DaytraderPlatformBackend")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DaytraderPlatformBackend")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

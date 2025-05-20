@@ -7,12 +7,53 @@
 }
 
 .sidebar-user {
-  font-weight: bold;
+  font-weight: 700;
   font-size: 18px;
   margin-bottom: 1rem;
   color: var(--color-text);
+  display: flex;
+  align-items: center;
 }
 
+.sidebar-user .sidebar-profile-img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  position: relative;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.sidebar-user .btn-refersh {
+  height: auto;
+  border: 1px solid #D4D7E5;
+  color: var(--color-btn-text);
+  background-color: var(--color-compare-border);
+  border-radius: 50%;
+  padding: 4px 4px 2px 4px;
+  position: absolute;
+  top: 170px;
+  left: 235px;
+  cursor: pointer;
+  align-items: center;
+}
+
+.sidebar-user .btn-refersh:hover {
+  background-color: var(--color-stock-tr);
+  color: var(--color-text);
+}
+
+.sidebar-user .btn-refersh i {
+  font-size: 15px;
+  padding: 0;
+}
+
+.sidebar-user i {
+  padding-right: 10px;
+  display: flex;
+  font-size: 25px;
+  align-items: center;
+}
 .sidebar-buttons {
   display: flex;
   gap: 0.5rem;
@@ -44,3 +85,5 @@
 .sidebar-buttons .active {
   background: #1f2937;
 }
+
+

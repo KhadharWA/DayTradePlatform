@@ -43,7 +43,7 @@ export default function MostTradedTable({ onSelect }) {
 
   return (
     <div className="most-traded2">
-      <h3><i class="fa-solid fa-fire"></i> Most Traded</h3>
+      <h3><i className="fa-solid fa-fire"></i> Most Traded</h3>
       <table className="most-traded-table">
         <thead>
           <tr>

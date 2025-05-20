@@ -146,4 +146,27 @@ public class ProfileController(DataContext context, UserManager<UserEntity> user
         return Ok(new { message = "Address saved" });
     }
 
+
+    [HttpPost("upload")]
+    public async Task<IActionResult> UploadImage(IFormFile file)
+    {
+        var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+        var user = await _userManager.FindByIdAsync(userId!);
+        if (file == null || user == null) return BadRequest();
+
+        var uploadsPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "uploads");
+        Directory.CreateDirectory(uploadsPath);
+
+        var fileName = $"{Guid.NewGuid()}{Path.GetExtension(file.FileName)}";
+        var filePath = Path.Combine(uploadsPath, fileName);
+
+        using var stream = new FileStream(filePath, FileMode.Create);
+        await file.CopyToAsync(stream);
+
+        user.ProfileImageUrl = fileName;
+        await _userManager.UpdateAsync(user);
+
+        return Ok(new { imageUrl = fileName });
+    }
+
 }

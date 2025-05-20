@@ -1,137 +1,146 @@
 .details {
   margin-top: 5px;
   width: 100%;
-  background-color: #FFFFFF;
+  background-color: var(--color-db-bc);
+}
 
-  .basic-info, .address-info {
-    form {
-      padding: 1rem;
+.details .basic-info form,
+.details .address-info form {
+  padding: 1rem;
+}
 
-      h5 {
-        color: var(--color-theme, #1f6feb);
-        margin-bottom: 1rem;
-        font-size: 24px;
-      }
 
-      .content {
-        display: grid;
-        gap: 1rem 2rem;
-        grid-template-columns: 1fr 1fr;
-        grid-template-areas:
-          "firstname lastname"
-          "email phone"
-          "buttons buttons";
+.details .basic-info form h2 {
+  color: var(--color-text);
+}
 
-        
-        #form-firstname {
-          grid-area: firstname;
-        }
+.details .basic-info form h5,
+.details .address-info form h5 {
+  color: var(--color-theme-h5);
+  margin-bottom: 1rem;
+  font-size: 24px;
+}
 
-        #form-lastname {
-          grid-area: lastname;
-        }
+.details .basic-info form .content,
+.details .address-info form .content {
+  display: grid;
+  gap: 1rem 2rem;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "firstname lastname"
+    "email phone"
+    "buttons buttons";
+}
 
-        #form-email {
-          grid-area: email;
-        }
+.details .address-info form .content {
+  grid-template-areas:
+    "addressline_1 addressline_1"
+    "addressline_2 addressline_2"
+    "postalcode city"
+    "buttons buttons";
+}
 
-        #form-phone {
-          grid-area: phone;
-        }
+#form-firstname {
+  grid-area: firstname;
+}
 
-        
-        .address-info & {
-          grid-template-areas:
-            "addressline_1 addressline_1"
-            "addressline_2 addressline_2"
-            "postalcode city"
-            "buttons buttons";
+#form-lastname {
+  grid-area: lastname;
+}
 
-          #form-addressline-1 {
-            grid-area: addressline_1;
-          }
+#form-email {
+  grid-area: email;
+}
 
-          #form-addressline-2 {
-            grid-area: addressline_2;
+#form-phone {
+  grid-area: phone;
+}
 
-            span {
-              color: #B4B7C9;
-              font-weight: 400;
-            }
-          }
+#form-addressline-1 {
+  grid-area: addressline_1;
+}
 
-          #form-postalcode {
-            grid-area: postalcode;
-          }
+#form-addressline-2 {
+  grid-area: addressline_2;
+}
 
-          #form-city {
-            grid-area: city;
-          }
-        }
+#form-addressline-2 span {
+  color: var(--color-span);
+  font-weight: 400;
+}
 
-        .input-group2 {
-          display: flex;
-          flex-direction: column;
+#form-postalcode {
+  grid-area: postalcode;
+}
 
-          label {
-            font-weight: 600;
-            margin-bottom: 5px;
-          }
+#form-city {
+  grid-area: city;
+}
 
-          input, textarea {
-            padding: 0.5rem 0.75rem;
-            border: 1px solid #00000050;
-            border-radius: 5px;
-            background-color: #FFFFFF;
-            font-size: 1rem;
+.input-group2 {
+  display: flex;
+  flex-direction: column;
+}
 
-            &:disabled {
-              background-color: #89898950;
-              cursor: not-allowed;
-              color: #000000;
-            }
-          }
+.input-group2 label {
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: var(--color-label);
+}
 
-          textarea {
-            resize: vertical;
-            min-height: 100px;
-          }
-        }
+.input-group2 input,
+.input-group2 textarea {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--border-input);
+  border-radius: 5px;
+  background-color: var(--color-bk-input);
+  font-size: 1rem;
+  color: var(--color-label);
+}
 
-        .form-buttons {
-          grid-area: buttons;
-          display: flex;
-          gap: 20px;
-          margin-top: 10px;
+.input-group2 input:disabled,
+.input-group2 textarea:disabled {
+  background-color: var(--color-bk-disabled);
+  cursor: not-allowed;
+  color: var(--color-disabled);
+}
 
-          .btn-theme {
-            background-color: var(--color-theme, #1f6feb);
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-weight: 500;
+.input-group2 textarea {
+  resize: vertical;
+  min-height: 100px;
+}
 
-            &:hover {
-              background-color: darken(#1f6feb, 5%);
-            }
-          }
+.form-buttons {
+  grid-area: buttons;
+  display: flex;
+  gap: 20px;
+  margin-top: 10px;
+}
 
-          .btn-gray {
-            background-color: #e0e0e0;
-            color: #333;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 4px;
-            cursor: pointer;
+.btn-theme {
+  background-color: var(--color-theme-h5);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.3s ease-in-out;
+}
 
-            &:hover {
-              background-color: #ccc;
-            }
-          }
-        }
-      }
-    }
-  }
+.btn-theme:hover {
+  background-color: #195cc5; /* darken #1f6feb ~5% */
+}
+
+.btn-gray {
+  background-color: #e0e0e0;
+  color: #333;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-gray:hover {
+  background-color: #ccc;
 }

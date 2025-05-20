@@ -18,7 +18,7 @@ export default function WinnersLosers() {
 
   return (
     <div className="win-loss-container">
-      <h3><i class="fa-solid fa-medal"></i> Winning/Losing</h3>
+      <h3><i className="fa-solid fa-medal"></i> Winning/Losing</h3>
       <div className="win-loss-columns">
         <div>
           <h4 style={{ color: "#035922" }}>Winner</h4>

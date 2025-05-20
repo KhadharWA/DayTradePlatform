@@ -6,7 +6,7 @@ namespace DaytraderPlatformBackend.Services;
 
 public class StockService(IConfiguration config) : IStockService
 {
-    private readonly HttpClient _http = new HttpClient();
+    private readonly HttpClient _http = new();
 
     private async Task<JsonElement?> FetchTwelveData(string endpoint)
     {

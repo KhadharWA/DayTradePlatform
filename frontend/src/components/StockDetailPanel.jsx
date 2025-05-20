@@ -29,6 +29,10 @@ export default function StockDetailPanel({ selectedSymbol, section }) {
   const [selectedPeriod, setSelectedPeriod] = useState("1h");
   const [loading, setLoading] = useState(false);
   const [meta, setMeta] = useState({});
+  const [quantity, setQuantity] = useState(1);
+  const [autoTrade, setAutoTrade] = useState(false);
+  const [threshold, setThreshold] = useState(5);
+  const [message, setMessage] = useState("");
 
   useEffect(() => {
     if (!selectedSymbol) return;
@@ -64,6 +68,48 @@ export default function StockDetailPanel({ selectedSymbol, section }) {
     fetchData();
   }, [selectedSymbol, section, selectedPeriod]);
 
+
+   const handleBuy = async () => {
+    try {
+      const res = await api.post("/trade/buy", {
+        symbol: selectedSymbol,
+        quantity,
+        price: quote?.open
+      });
+      setMessage(`✅ ${res.data}`);
+    } catch (err) {
+      setMessage(`❌ ${err.response?.data || "Fel vid köp"}`);
+    }
+  };
+
+  const handleSell = async () => {
+    try {
+      const res = await api.post("/trade/sell", {
+        symbol: selectedSymbol,
+        quantity,
+        price: quote?.open
+      });
+      setMessage(`✅ ${res.data}`);
+    } catch (err) {
+      setMessage(`❌ ${err.response?.data || "Fel vid försäljning"}`);
+    }
+  };
+
+   const handleAutoTrade = async () => {
+    try {
+      const change = Math.random() * 10 * (Math.random() < 0.5 ? -1 : 1);
+      const res = await api.post("/trade/autotrade", {
+        symbol: selectedSymbol,
+        quantity,
+        price: quote?.open,
+        changePercent: change.toFixed(2),
+      });
+      setMessage(`✅ ${res.data}`);
+    } catch (err) {
+      setMessage(`❌ ${err.response?.data || "Fel vid AutoTrade"}`);
+    }
+  };
+
   if (!selectedSymbol) {
     return <div>Välj en aktie...</div>;
   }
@@ -75,7 +121,7 @@ export default function StockDetailPanel({ selectedSymbol, section }) {
   if (section === "history") {
     return (
       <div className="stock-history-panel fade-in">
-        <h3>📊 Historisk utveckling</h3>
+        <h3><i className="fa-solid fa-chart-pie"></i> Historisk utveckling</h3>
         {candles.length > 0 ? (
           <table className="fade-in">
             <thead>
@@ -167,6 +213,47 @@ export default function StockDetailPanel({ selectedSymbol, section }) {
       ) : (
         <p>Ingen grafdata tillgänglig.</p>
       )}
+      <div className="trade-form">
+          <div className="trade-nb">
+            <label>Antal aktier</label>
+            <input
+              type="number"
+              min="1"
+              value={quantity}
+              onChange={(e) => setQuantity(Number(e.target.value))}
+            />
+          </div>
+
+          <div className="trade-buttons">
+            <button className="buy" onClick={handleBuy}> Köp</button>
+            <button className="sell" onClick={handleSell}> Sälj</button>
+          </div>
+
+          <div className="autotrade-section">
+            <label>
+              <input
+                type="checkbox"
+                checked={autoTrade}
+                onChange={(e) => setAutoTrade(e.target.checked)}
+              />
+              Aktivera AutoTrade
+            </label>
+
+            {autoTrade && (
+              <>
+                <label>Tröskelvärde (%)</label>
+                <input
+                  type="number"
+                  value={threshold}
+                  onChange={(e) => setThreshold(e.target.value)}
+                />
+                <button onClick={handleAutoTrade}><i className="fa-solid fa-robot"></i> Test AutoTrade</button>
+              </>
+            )}
+          </div>
+
+          {message && <p className="trade-message">{typeof message === "string" ? message : message?.message || "Något gick fel"}</p>}
+        </div>
     </div>
   );
 }

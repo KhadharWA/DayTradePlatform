@@ -21,10 +21,40 @@ export default function App() {
   const { isLoggedIn } = useAuth();
 
   useEffect(() => {
-    const savedTheme = localStorage.getItem("theme");
-    if (savedTheme === "dark") {
-      document.body.classList.add("dark");
-    }
+  // 🌓 Sätt tema
+  const savedTheme = localStorage.getItem("theme");
+  //console.log("🌗 Sparat tema:", savedTheme);
+  if (savedTheme === "dark") {
+    document.body.classList.add("dark");
+  }
+
+  // ⏱️ Timeout för inaktivitet
+  const timeoutMinutes = parseInt(localStorage.getItem("timeout")) || 10;
+  //console.log("⏱️ Timeout är satt till:", timeoutMinutes, "minuter");
+
+  let timeout;
+
+  const resetTimer = () => {
+    //console.log("🔄 Inaktivitetstimern nollställd");
+    clearTimeout(timeout);
+    timeout = setTimeout(() => {
+      console.log("🚪 Loggar ut p.g.a. inaktivitet");
+      alert("Du har varit inaktiv för länge. Du loggas nu ut.");
+      localStorage.removeItem("token");
+      localStorage.removeItem("user");
+      window.location.href = "/";
+    }, timeoutMinutes * 60 * 1000);
+  };
+
+  window.addEventListener("mousemove", resetTimer);
+  window.addEventListener("keydown", resetTimer);
+  resetTimer();
+
+  return () => {
+    clearTimeout(timeout);
+    window.removeEventListener("mousemove", resetTimer);
+    window.removeEventListener("keydown", resetTimer);
+  };
   }, []);
 
   return (

@@ -1,28 +1,58 @@
 import { useEffect, useState } from "react";
 import "../../Styles/Settings.css";
+import api from "../../api";
 
 const Settings = () => {
   const [autoTrade, setAutoTrade] = useState(false);
   const [threshold, setThreshold] = useState("");
   const [language, setLanguage] = useState("sv");
+  const [notificationsEnabled, setNotificationsEnabled] = useState(false);
   const [darkMode, setDarkMode] = useState(() => {
-    // Hämta tidigare val från localStorage
     return localStorage.getItem("theme") === "dark";
+  });
+  const [profile, setProfile] = useState(null);
+  const [timeout, setTimeoutValue] = useState(() => {
+    return localStorage.getItem("timeout") || 10;
   });
 
   useEffect(() => {
-    if (darkMode) {
-      document.body.classList.add("dark");
-      localStorage.setItem("theme", "dark");
-    } else {
-      document.body.classList.remove("dark");
-      localStorage.setItem("theme", "light");
-    }
-  }, [darkMode]);
+    const fetchData = async () => {
+      const profRes = await api.get("/Profile/details");
+      setProfile(profRes.data);
+      setAutoTrade(profRes.data.autoTradeEnabled);
+      setThreshold(profRes.data.autoTradeThreshold ?? "");
+      const notifRes = await api.get("/Notification/status");
+      setNotificationsEnabled(
+        typeof notifRes.data.enabled === "boolean" ? notifRes.data.enabled : false
+      );
+    };
 
-  const handleSave = () => {
-    // TODO: Save logic
-    alert("Inställningar sparade!");
+    fetchData();
+  }, []);
+
+  const handleSave = async () => {
+    try {
+      const payload = {
+        autoTradeEnabled: autoTrade,
+        autoTradeThreshold: parseFloat(threshold),
+        notificationsEnabled: notificationsEnabled
+      };
+
+      const res = await api.post("/Trade/update-settings", payload);
+
+      // Spara dark mode till localStorage + DOM
+      localStorage.setItem("theme", darkMode ? "dark" : "light");
+      if (darkMode) {
+        document.body.classList.add("dark");
+      } else {
+        document.body.classList.remove("dark");
+      }
+
+      alert(res.data.message || "Inställningar sparade!");
+    } catch (err) {
+      console.error(" Fel vid sparande:", err);
+      alert("Ett fel inträffade när inställningarna skulle sparas.");
+    }
   };
 
   const handleCancel = () => {
@@ -60,7 +90,12 @@ const Settings = () => {
         </div>
 
         <label htmlFor="timeout">Timeout för inaktivitet (minuter)</label>
-        <input type="number" id="timeout" placeholder="10" />
+        <input type="number" id="timeout" min="1" value={timeout ?? ""} onChange={(e) => 
+          { setTimeoutValue(e.target.value); 
+            localStorage.setItem("timeout", e.target.value);
+          }} 
+          placeholder="10" 
+        />
 
         <div className="checkbox-group">
           <input
@@ -76,14 +111,25 @@ const Settings = () => {
         <input
           type="number"
           id="threshold"
-          value={threshold}
+          value={threshold ?? ""}
           onChange={(e) => setThreshold(e.target.value)}
-          placeholder="5"
+          placeholder={profile?.autoTradeThreshold ?? "5"} 
         />
 
-        <div className="checkbox-group">
-          <input type="checkbox" id="mockData" />
-          <label htmlFor="mockData">Visa mockdata istället för live</label>
+        <div className="theme-toggle-container">
+        <h4>Aktivera notiser</h4>
+          <div className="btn-switch">
+            <label>Av</label>
+            <label className="switch" >
+              <input
+                type="checkbox"
+                checked={notificationsEnabled}
+                onChange={(e) => setNotificationsEnabled(e.target.checked)}
+              />
+              <span className="slider2 round"></span>
+            </label>
+            <label>På</label>
+          </div>
         </div>
 
         <label htmlFor="language">Språk</label>

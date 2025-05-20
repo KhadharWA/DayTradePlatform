@@ -5,22 +5,23 @@
 }
 
 #settings .Säkerhetbox {
-    background: #ffffff;
+    background-color: var(--color-db-bc);
     border-radius: 8px;
     padding: 2rem;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.85);
+    box-shadow: var(--shadow-account-box);
 }
 
 #settings .Säkerhetbox h2 {
     font-size: 1.5rem;
     margin-bottom: 1.5rem;
-    color: #222;
+    color: var(--color-text);
 }
 
 #settings .Säkerhetbox label {
     font-weight: 600;
     display: block;
     margin-bottom: 0.5rem;
+    color: var(--color-text);
 }
 
 #settings .Säkerhetbox input[type="text"],
@@ -34,6 +35,13 @@
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 1rem;
+    color: var(--color-text);
+    background-color: var(--color-bk-input);
+}
+
+
+#settings .Säkerhetbox input::placeholder {
+    color: var(--color-text);
 }
 
 #settings .Säkerhetbox .checkbox-group,
@@ -42,16 +50,18 @@
     align-items: center;
     gap: 0.5rem;
     margin-bottom: 1rem;
+    color: var(--color-text);
 }
 
 #settings .Säkerhetbox .checkbox-group label,
 #settings .Säkerhetbox .toggle-group label {
     margin-bottom: 0;
+    color: var(--color-text);
 }
 
 #settings .Säkerhetbox .danger-zone {
-    background-color: #fff5f5;
-    border: 1px solid #f5c2c2;
+    background-color: var(--color-dangerzone);
+    border: 1px solid var(--color-dangerzone-bd);
     padding: 1.5rem;
     border-radius: 6px;
     margin-top: 2rem;
@@ -130,9 +140,13 @@
   margin-top: 2rem;
 }
 
+.theme-toggle-container  h4 {
+    color: var(--color-text);
+}
+
 .theme-toggle-container  p {
     margin-bottom: 0.75rem;
-    color: #666;
+    color: var(--color-text);
     font-size: 0.95rem;
 }
 
@@ -146,6 +160,7 @@
 
 #settings .Säkerhetbox .btn-switch label {
     font-weight: 500;
+    
 }
 
 #settings .Säkerhetbox .btn-switch .switch {
@@ -153,6 +168,7 @@
     display: inline-block;
     width: 50px;
     height: 26px;
+    
 }
 
 
@@ -194,4 +210,39 @@
 
 #settings .Säkerhetbox .btn-switch .switch input:checked + .slider::before {
     transform: translateX(12px);
+}
+
+
+#settings .Säkerhetbox .btn-switch .switch .slider2 {
+    position: absolute;
+    cursor: pointer;
+    border: 1px solid #000000;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ffffff;
+    transition: 0.4s;
+    border-radius: 34px;
+}
+
+#settings .Säkerhetbox .btn-switch .switch input:checked + .slider2 {
+    background-color: #35374d;
+}
+
+#settings .Säkerhetbox .btn-switch .switch input:checked + .slider2::before {
+    transform: translateX(20px);
+}
+
+
+#settings .Säkerhetbox .btn-switch .switch .slider2::before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 4px;
+    bottom: 2px;
+    background-color: #ff7636;
+    transition: 0.4s;
+    border-radius: 50%;
 }

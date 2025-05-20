@@ -56,6 +56,35 @@ namespace DaytraderPlatformBackend.Migrations
                     b.ToTable("Addresses");
                 });
 
+            modelBuilder.Entity("DaytraderPlatformBackend.Entities.NotificationEntity", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsRead")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Message")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Notifications");
+                });
+
             modelBuilder.Entity("DaytraderPlatformBackend.Entities.PortfolioItemEntity", b =>
                 {
                     b.Property<int>("Id")
@@ -83,6 +112,40 @@ namespace DaytraderPlatformBackend.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("PortfolioItems");
+                });
+
+            modelBuilder.Entity("DaytraderPlatformBackend.Entities.TradeEntity", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("Quantity")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("Symbol")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("Timestamp")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Type")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Trades");
                 });
 
             modelBuilder.Entity("DaytraderPlatformBackend.Entities.TransactionEntity", b =>
@@ -173,6 +236,9 @@ namespace DaytraderPlatformBackend.Migrations
                     b.Property<string>("NormalizedUserName")
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
+
+                    b.Property<bool>("NotificationsEnabled")
+                        .HasColumnType("bit");
 
                     b.Property<string>("PasswordHash")
                         .HasColumnType("nvarchar(max)");
@@ -356,10 +422,32 @@ namespace DaytraderPlatformBackend.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("DaytraderPlatformBackend.Entities.NotificationEntity", b =>
+                {
+                    b.HasOne("DaytraderPlatformBackend.Entities.UserEntity", "User")
+                        .WithMany("Notifications")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("DaytraderPlatformBackend.Entities.PortfolioItemEntity", b =>
                 {
                     b.HasOne("DaytraderPlatformBackend.Entities.UserEntity", "User")
                         .WithMany("Portfolio")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("DaytraderPlatformBackend.Entities.TradeEntity", b =>
+                {
+                    b.HasOne("DaytraderPlatformBackend.Entities.UserEntity", "User")
+                        .WithMany("Trades")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -433,7 +521,11 @@ namespace DaytraderPlatformBackend.Migrations
                 {
                     b.Navigation("Addresses");
 
+                    b.Navigation("Notifications");
+
                     b.Navigation("Portfolio");
+
+                    b.Navigation("Trades");
 
                     b.Navigation("Transactions");
                 });

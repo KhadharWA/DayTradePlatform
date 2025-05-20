@@ -1,6 +1,4 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
-
-
 using Microsoft.AspNetCore.Identity;
 
 namespace DaytraderPlatformBackend.Entities;
@@ -24,10 +22,18 @@ public class UserEntity : IdentityUser
     [Column(TypeName = "decimal(5,2)")]
     public decimal? AutoTradeThreshold { get; set; }
 
+    public bool NotificationsEnabled { get; set; } = true;
+
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
     public DateTime UpdatedAt { get; set; } = DateTime.UtcNow;
 
     public ICollection<PortfolioItemEntity> Portfolio { get; set; } = [];
+
     public ICollection<TransactionEntity> Transactions { get; set; } = [];
+
     public ICollection<AddressEntity> Addresses { get; set; } = [];
+
+    public ICollection<TradeEntity> Trades { get; set; } = [];
+
+    public ICollection<NotificationEntity> Notifications { get; set; } = [];
 }
