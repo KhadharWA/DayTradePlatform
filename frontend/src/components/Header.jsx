@@ -23,7 +23,7 @@ export default function Header() {
           <nav className={`nav-links ${menuOpen ? "open" : ""}`}>
             <a href={isLoggedIn ? "/profile" : "/"}>Home</a>
             <a href="/Stocks">Stocks</a>
-            <a href="#">About</a>
+            <a href="/About">About</a>
           </nav>
         </div>
 

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import api from "../api";
+import { useAuth } from "../hooks/useAuth"; 
 import {
   LineChart, Line, XAxis, YAxis, Tooltip,
   ResponsiveContainer, CartesianGrid
@@ -95,7 +96,7 @@ export default function StockDetailPanel({ selectedSymbol, section }) {
     }
   };
 
-   const handleAutoTrade = async () => {
+  const handleAutoTrade = async () => {
     try {
       const change = Math.random() * 10 * (Math.random() < 0.5 ? -1 : 1);
       const res = await api.post("/trade/autotrade", {
@@ -159,7 +160,7 @@ export default function StockDetailPanel({ selectedSymbol, section }) {
   }
   const flag = meta?.exchange ? (exchangeFlags[meta.exchange] || "") : "";
   const lineColor = quote?.percent_change > 0 ? "#00C853" : "#D50000";
-
+  const { isLoggedIn } = useAuth();
   return (
     <div className="stock-detail animate-slide">
        <h2>{flag} {selectedSymbol}</h2>
@@ -213,7 +214,8 @@ export default function StockDetailPanel({ selectedSymbol, section }) {
       ) : (
         <p>Ingen grafdata tillgänglig.</p>
       )}
-      <div className="trade-form">
+      {isLoggedIn && (
+        <div className="trade-form">
           <div className="trade-nb">
             <label>Antal aktier</label>
             <input
@@ -254,6 +256,7 @@ export default function StockDetailPanel({ selectedSymbol, section }) {
 
           {message && <p className="trade-message">{typeof message === "string" ? message : message?.message || "Något gick fel"}</p>}
         </div>
+        )}
     </div>
   );
 }

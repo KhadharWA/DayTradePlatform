@@ -15,7 +15,7 @@ public class UserEntity : IdentityUser
     public string? ProfileImageUrl { get; set; }
 
     [Column(TypeName = "decimal(12,2)")]
-    public decimal Balance { get; set; } = 0m;
+    public decimal Balance { get; set; } = 6000m;
 
     public bool AutoTradeEnabled { get; set; } = false;
 

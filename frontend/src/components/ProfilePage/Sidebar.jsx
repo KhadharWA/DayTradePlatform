@@ -3,6 +3,7 @@ import "../../Styles/Sidebar.css";
 import api from "../../api";
 import { useAuth } from "../../hooks/useAuth";
 import { useNavigate } from "react-router-dom";
+import Avatar from "../../assets/avatar.jpg";
 
 export default function Sidebar({ setActiveSection, activeSection }) {
    const buttons = [
@@ -70,7 +71,7 @@ export default function Sidebar({ setActiveSection, activeSection }) {
             className="sidebar-profile-img"
           />
         ) : (
-          <i className="fa fa-user" />
+          <img src={Avatar} alt="" />
         )}
         <form encType="multipart/form-data">
             <input

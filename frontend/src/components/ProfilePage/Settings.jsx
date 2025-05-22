@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import "../../Styles/Settings.css";
 import api from "../../api";
-
+import ChangePassword from "../Helpers/ChangePassword";
+import { useAuth } from "../../hooks/useAuth";
 const Settings = () => {
   const [autoTrade, setAutoTrade] = useState(false);
   const [threshold, setThreshold] = useState("");
@@ -14,7 +15,7 @@ const Settings = () => {
   const [timeout, setTimeoutValue] = useState(() => {
     return localStorage.getItem("timeout") || 10;
   });
-
+  const { logout } = useAuth();
   useEffect(() => {
     const fetchData = async () => {
       const profRes = await api.get("/Profile/details");
@@ -61,10 +62,22 @@ const Settings = () => {
     setAutoTrade(false);
   };
 
-  const handleDeleteAccount = () => {
-    if (window.confirm("Är du säker på att du vill radera ditt konto?")) {
-      // TODO: Delete logic
-      alert("Konto raderat.");
+  const handleDeleteAccount = async () => {
+    const confirm = window.confirm("Är du säker på att du vill radera ditt konto?");
+    if (!confirm) return;
+
+    try {
+      const res = await api.delete("/profile/delete-account");
+      if (res.status === 200) {
+        alert("Konto raderat.");
+        logout();            // logga ut användaren
+        navigate("/login");       // navigera till startsidan
+      } else {
+        alert("❌ Något gick fel. Försök igen.");
+      }
+    } catch (err) {
+      console.error("Fel vid kontoradering:", err);
+      alert("Ett fel uppstod: " + (err.response?.data?.error || "Okänt fel"));
     }
   };
 
@@ -74,15 +87,8 @@ const Settings = () => {
     <section id="settings">
       <div className="Säkerhetbox">
         <h2>Säkerhet & Inställningar</h2>
-
-        <label htmlFor="currentPassword">Nuvarande lösenord</label>
-        <input type="password" id="currentPassword" placeholder="********" />
-
-        <label htmlFor="newPassword">Nytt lösenord</label>
-        <input type="password" id="newPassword" placeholder="********" />
-
-        <label htmlFor="confirmPassword">Bekräfta lösenord</label>
-        <input type="password" id="confirmPassword" placeholder="********" />
+        <ChangePassword />
+        
 
         <div className="checkbox-group">
           <input type="checkbox" id="2fa" disabled />

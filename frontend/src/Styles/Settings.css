@@ -111,6 +111,22 @@
     transition: background 0.35s ease-in-out;
 }
 
+#settings .Säkerhetbox button.btn-save {
+    background-color: #2ecc71;
+    border: 0;
+    margin-bottom: 25px;
+    width: 90px;
+    color: var(--color-text);
+    font-weight: 700;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.35);
+    transition: background 0.35s ease-in-out;
+}
+
+#settings .Säkerhetbox button.btn-save:hover  {
+background-color: #084120;
+  color: #ffffff;;
+}
+
 #settings .Säkerhetbox .form-actions button.save:hover {
   background-color: #084120;
   color: #ffffff;
@@ -245,4 +261,9 @@
     background-color: #ff7636;
     transition: 0.4s;
     border-radius: 50%;
+}
+
+
+.password-message {
+    color: #c0392b;
 }

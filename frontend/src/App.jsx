@@ -15,6 +15,7 @@ import Footer from './components/Footer.jsx';
 import Login from './pages/AuthPages/LoginPage.jsx';
 import Register from './pages/AuthPages/RegisterPage.jsx';
 import ProfilePage from './pages/ProfilePage.jsx';
+import About from './pages/About.jsx';
 
 export default function App() {
   const [selectedStock, setSelectedStock] = useState(null);
@@ -63,9 +64,10 @@ export default function App() {
         <Header isLoggedIn={isLoggedIn} />
           <main className="main-content"> {/* Main content som fyller höjden */}
             <Routes>
-              <Route path="/" element={<Home />} />
+              <Route path="/" element={ isLoggedIn ? <Navigate to="/profile" replace /> : <Home /> } />
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
+              <Route path="/About" element={<About />} />
               <Route path="/profile" element={isLoggedIn ? <ProfilePage /> : <Navigate to="/login" replace />} />
               <Route
                 path="/stocks"

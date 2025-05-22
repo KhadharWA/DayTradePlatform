@@ -197,6 +197,16 @@
   },
   {
     "ContainingType": "DaytraderPlatformBackend.Controllers.ProfileController",
+    "Method": "DeleteAccount",
+    "RelativePath": "api/Profile/delete-account",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DaytraderPlatformBackend.Controllers.ProfileController",
     "Method": "GetProfile",
     "RelativePath": "api/Profile/details",
     "HttpMethod": "GET",
@@ -232,6 +242,22 @@
       {
         "Name": "dto",
         "Type": "DaytraderPlatformBackend.Dtos.UpdateProfileDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DaytraderPlatformBackend.Controllers.ProfileController",
+    "Method": "ChangePassword",
+    "RelativePath": "api/Profile/Updatepassword",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "DaytraderPlatformBackend.Dtos.ChangePasswordDto",
         "IsRequired": true
       }
     ],

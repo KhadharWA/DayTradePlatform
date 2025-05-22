@@ -146,6 +146,61 @@ public class ProfileController(DataContext context, UserManager<UserEntity> user
         return Ok(new { message = "Address saved" });
     }
 
+    
+    [HttpPut("Updatepassword")]
+    public async Task<IActionResult> ChangePassword([FromBody] ChangePasswordDto dto)
+    {
+        try
+        {
+            var user = await _userManager.GetUserAsync(User);
+            if (user == null) return Unauthorized();
+
+            var result = await _userManager.ChangePasswordAsync(user, dto.CurrentPassword!, dto.NewPassword!);
+            if (!result.Succeeded)
+            {
+                var errors = string.Join(", ", result.Errors.Select(e => e.Description));
+                return BadRequest(new { error = errors });
+            }
+
+            return Ok(new { message = "Lösenordet har ändrats." });
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, new { error = "Ett fel uppstod", detail = ex.Message });
+        }
+    }
+
+    [HttpDelete("delete-account")]
+    public async Task<IActionResult> DeleteAccount()
+    {
+        try
+        {
+            var user = await _userManager.GetUserAsync(User);
+            if (user == null) return Unauthorized();
+
+            // 1. Hämta och ta bort relaterade adresser
+            var addresses = await _context.Addresses
+                .Where(a => a.UserId == user.Id)
+                .ToListAsync();
+
+            _context.Addresses.RemoveRange(addresses);
+
+            // 2. Ta bort användaren
+            var result = await _userManager.DeleteAsync(user);
+            if (!result.Succeeded)
+            {
+                return BadRequest(new { error = string.Join(", ", result.Errors.Select(e => e.Description)) });
+            }
+
+            await _context.SaveChangesAsync();
+            return Ok(new { message = "Konto raderat." });
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, new { error = ex.Message });
+        }
+    }
+
 
     [HttpPost("upload")]
     public async Task<IActionResult> UploadImage(IFormFile file)
